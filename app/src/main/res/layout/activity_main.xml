@@ -34,7 +34,7 @@
             android:src="@drawable/show_list"></ImageView>
     </RelativeLayout>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:visibility="gone"
         android:layout_below="@+id/rl1"
         android:id="@+id/recycler_view"
@@ -50,7 +50,7 @@
         android:scaleType="fitCenter"></WebView>
 
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add"
         android:layout_width="60dp"
         android:layout_height="60dp"

@@ -1,20 +1,17 @@
 package com.elevenzon.sqlite.Activity;
 
 import android.app.Activity;
-import android.content.ContentValues;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Base64;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,8 +20,6 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
 import com.elevenzon.sqlite.Adapetr.ImageListAdapter;
-import com.elevenzon.sqlite.MainActivity;
-import com.elevenzon.sqlite.NotesAdapter;
 import com.elevenzon.sqlite.R;
 import com.elevenzon.sqlite.Utils.Utils;
 
@@ -180,7 +175,7 @@ public class AddlayoutInflater extends AppCompatActivity {
 
     public void displayNotes() {
         arrayList =new ArrayList<String>();
-        arrayList.addAll(database_helper.getImages());
+        //arrayList.addAll(database_helper.getImages());
         image_recycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         image_recycler.setItemAnimator(new DefaultItemAnimator());
          imageListAdapter = new ImageListAdapter(arrayList,AddlayoutInflater.this);

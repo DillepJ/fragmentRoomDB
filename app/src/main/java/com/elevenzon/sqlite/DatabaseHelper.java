@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -17,7 +16,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TABLE_NAME = "tbl_notes1";
     public static final String TABLE_NAME1 = "sample";
     public static final String TABLE_NAME2 = "sample11";
-    public  static final String Image_Table="image_table";
+    public  static final String IMAGE_TABLE_1="image_table_1";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -32,7 +31,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         query = "CREATE TABLE " + TABLE_NAME + "(ID INTEGER PRIMARY KEY, Title TEXT, Description TEXT,Profile BLOB NOT NULL)";
         query1 = "CREATE TABLE " + TABLE_NAME1 + "(ID INTEGER PRIMARY KEY, Title TEXT, Description TEXT , Latitude TEXT, Langtitude TEXT, Profile BLOB NOT NULL)";
         //query1 = "CREATE TABLE " + TABLE_NAME2 + "(ID INTEGER PRIMARY KEY, Title TEXT, Description TEXT , Latitude TEXT, Langtitude TEXT, Date DATETIME DEFAULT CURRENT_TIMESTAMP, Profile BLOB NOT NULL)";
-        images="CREATE TABLE " + Image_Table + "(ID INTEGER PRIMARY KEY,images BLOB NOT NULL)";
+        images="CREATE TABLE " + IMAGE_TABLE_1 + "(ID INTEGER PRIMARY KEY,images BLOB NOT NULL)";
 
         db.execSQL(query1);
         db.execSQL(images);
@@ -44,7 +43,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if(oldVersion>newVersion) {
             db.execSQL("ALTER TABLE sample ADD COLUMN Date DATETIME DEFAULT CURRENT_TIMESTAMP");
             db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME1);
-            db.execSQL("DROP TABLE IF EXISTS " + Image_Table);
+            db.execSQL("DROP TABLE IF EXISTS " + IMAGE_TABLE_1);
             onCreate(db);
         }
     }

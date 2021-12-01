@@ -17,7 +17,8 @@ public class SqliteHelepr extends SQLiteOpenHelper {
     public static final String TABLE_NAME = "tbl_notes1";
     public static final String TABLE_NAME1 = "staff_info";
     public static final String TABLE_NAME2 = "sample11";
-    public  static final String Image_Table="image_table";
+   // public  static final String Image_Table="image_table";
+    public  static final String user_details_table="image_table";
 
     public SqliteHelepr(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -32,10 +33,19 @@ public class SqliteHelepr extends SQLiteOpenHelper {
         query = "CREATE TABLE " + TABLE_NAME + "(ID INTEGER PRIMARY KEY, Title TEXT, Description TEXT,Profile BLOB NOT NULL)";
         //query1 = "CREATE TABLE " + TABLE_NAME1 + "(ID INTEGER PRIMARY KEY, Title TEXT, Description TEXT , Latitude TEXT, Langtitude TEXT, Profile BLOB NOT NULL)";
         query1 = "CREATE TABLE " + TABLE_NAME1 + "(ID INTEGER PRIMARY KEY, Title TEXT, Description TEXT , Latitude TEXT, Langtitude TEXT, Date DATETIME DEFAULT CURRENT_TIMESTAMP, Profile BLOB NOT NULL)";
-         images = "CREATE TABLE " + Image_Table + "(ID INTEGER PRIMARY KEY,images BLOB NOT NULL)";
+         //images = "CREATE TABLE " + Image_Table + "(ID INTEGER PRIMARY KEY,images BLOB NOT NULL)";
+        db.execSQL("CREATE TABLE " + user_details_table + " ("
+                +"user_id integer primary key ,"+
+                "user_name TEXT," +
+                "dob TEXT," +
+                "mobile_number TEXT," +
+                "profile_img BLOB," +
+                "password TEXT," +
+                "pvname TEXT)");
+
 
         db.execSQL(query1);
-        db.execSQL(images);
+        //db.execSQL(images);
     }
 
     //upgrading database
@@ -44,7 +54,8 @@ public class SqliteHelepr extends SQLiteOpenHelper {
         if(oldVersion>newVersion) {
             db.execSQL("ALTER TABLE sample ADD COLUMN Date DATETIME DEFAULT CURRENT_TIMESTAMP");
             db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME1);
-            db.execSQL("DROP TABLE IF EXISTS " + Image_Table);
+            //db.execSQL("DROP TABLE IF EXISTS " + Image_Table);
+            db.execSQL("DROP TABLE IF EXISTS " + user_details_table);
             onCreate(db);
         }
     }
@@ -66,6 +77,54 @@ public class SqliteHelepr extends SQLiteOpenHelper {
         //close database connection
         sqLiteDatabase.close();
     }
+
+    //add the new note
+    public long insertUserDetails(String user_name,String dob,String password, byte[] profile,String mobile_no) {
+        long id=0;
+        SQLiteDatabase sqLiteDatabase = this .getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("user_name", user_name);
+        values.put("dob",dob);
+        values.put("password",password);
+        values.put("profile_img",profile);
+        values.put("mobile_number",mobile_no);
+
+        //inserting new row
+        id = sqLiteDatabase.insert(user_details_table, null , values);
+        //close database connection
+        sqLiteDatabase.close();
+
+        return id;
+
+    }
+
+    //get User Details
+    public ArrayList<NoteModel> getUserDetails() {
+        ArrayList<NoteModel> arrayList = new ArrayList<>();
+
+        // select all query
+        String select_query= "SELECT *FROM " + user_details_table;
+
+        SQLiteDatabase db = this .getWritableDatabase();
+        Cursor cursor = db.rawQuery(select_query, null);
+
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                NoteModel noteModel = new NoteModel();
+                noteModel.setUser_id(cursor.getInt(cursor.getColumnIndexOrThrow("user_id")));
+                noteModel.setUser_profile(cursor.getBlob(cursor.getColumnIndexOrThrow("profile_img")));
+                noteModel.setUser_password(cursor.getString(cursor.getColumnIndexOrThrow("password")));
+                noteModel.setUser_name(cursor.getString(cursor.getColumnIndexOrThrow("user_name")));
+                noteModel.setUser_dob(cursor.getString(cursor.getColumnIndexOrThrow("dob")));
+                noteModel.setUser_mobile_no(cursor.getString(cursor.getColumnIndexOrThrow("mobile_number")));
+
+                arrayList.add(noteModel);
+            }while (cursor.moveToNext());
+        }
+        return arrayList;
+    }
+
 
     //get the all notes
     public ArrayList<NoteModel> getNotes() {
@@ -124,10 +183,10 @@ public class SqliteHelepr extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase=this.getWritableDatabase();
         ContentValues values=new ContentValues();
         values.put("images",image);
-        sqLiteDatabase.insert(Image_Table,null,values);
+        //sqLiteDatabase.insert(Image_Table,null,values);
     }
 
-    public ArrayList<String > getImages(){
+   /* public ArrayList<String > getImages(){
         ArrayList<String> arrayList = new ArrayList<>();
 
         // select all query
@@ -144,5 +203,5 @@ public class SqliteHelepr extends SQLiteOpenHelper {
 
         return arrayList;
 
-    }
+    }*/
 }

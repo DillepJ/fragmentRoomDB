@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.HomePage">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E7E8E8">
+
+        <RelativeLayout
+            android:id="@+id/image_rl"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            >
+
+
+            <pl.droidsonroids.gif.GifImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/gif_view"
+                android:scaleType="centerCrop"
+                android:src="@drawable/good_night_1">
+            </pl.droidsonroids.gif.GifImageView>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:id="@+id/back_icon"
+                android:src="@drawable/back"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp">
+
+            </ImageView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_below="@id/image_rl"
+            android:layout_marginTop="-50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/profile_image_rl">
+
+            <RelativeLayout
+                android:id="@+id/profile_bg_rl"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/profile_bg_circle">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_centerInParent="true"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/good_evening"
+                    android:id="@+id/profile"></de.hdodenhof.circleimageview.CircleImageView>
+            </RelativeLayout>
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/user_name"
+                android:text="JDK"
+                android:textColor="@color/black"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/profile_bg_rl"
+                android:layout_marginBottom="20dp"
+                android:textSize="15dp"
+                android:textStyle="bold"></TextView>
+
+        </RelativeLayout>
+        
+        <LinearLayout
+            android:layout_margin="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/details_ll"
+            android:layout_below="@+id/profile_image_rl">
+            
+            <RelativeLayout
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/game_assistance"
+                android:padding="10dp"
+                android:background="@drawable/log_in_bg">
+                
+                <ImageView
+                    android:tint="@color/colorPrimary"
+                    android:layout_centerVertical="true"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/game_assistance"
+                    android:id="@+id/game_assis"></ImageView>
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_1"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
+                    android:layout_toRightOf="@+id/game_assis"
+                    android:layout_marginLeft="10dp"
+                    android:text="Game Assistance"></TextView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:padding="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/qr_rl"
+                android:background="@drawable/log_in_bg">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/qr_icon"
+                    android:tint="@color/colorPrimary"
+                    android:src="@drawable/qr_icon">
+                </ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_2"
+                    android:layout_toRightOf="@+id/qr_icon"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
+                    android:text="QR Reader"
+                    android:layout_centerVertical="true"></TextView>
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
