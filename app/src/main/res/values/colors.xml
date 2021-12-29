@@ -6,4 +6,17 @@
     <color name="background">#ececec</color>
     <color name="black">#000000</color>
     <color name="gray">#808080</color>
+
+    <color name="colorDanger">#dc3545</color>
+    <color name="colorWarning">#ffc107</color>
+    <color name="colorSuccess">#28a745</color>
+    <color name="colorGray500">#adb5bd</color>
+    <color name="colorGray300">#dee2e6</color>
+    <color name="purple">#5D73F6</color>
+    <color name="light_purple">#677AEC</color>
+    <color name="light_purple_1">#CEB4F3</color>
+    <color name="blue">#40B2F6</color>
+    <color name="dark_blue">#0091EA</color>
+    <color name="light_blue">#68BCEF</color>
+    <color name="light_blue_1">#DFEFFA</color>
 </resources>

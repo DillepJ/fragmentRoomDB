@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/tamilnadu_logo">
+        </ImageView>
+
+        <RelativeLayout
+            android:layout_marginTop="15dp"
+            android:background="@drawable/log_in_btn_bg"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:layout_marginLeft="10dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/profile_img"
+                android:src="@drawable/profile"
+                android:layout_centerVertical="true"></ImageView>
+
+            <EditText
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/log_in_bg"
+                android:elevation="5dp"
+                android:id="@+id/user_name"
+                android:hint="User Name"
+                android:layout_toRightOf="@+id/profile_img"
+                ></EditText>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginTop="15dp"
+            android:background="@drawable/log_in_btn_bg"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <ImageView
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/pass_img"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/profile"
+                android:layout_centerVertical="true"></ImageView>
+            <EditText
+                android:elevation="6dp"
+                android:layout_toRightOf="@+id/pass_img"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/log_in_bg"
+                android:id="@+id/password"
+                android:hint="password"
+                android:inputType="textWebPassword"></EditText>
+
+        </RelativeLayout>
+
+        <Button
+            android:background="@drawable/log_in_btn_bg"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Login"></Button>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Forgot Your Passsword?"
+            android:gravity="center"
+            android:textColor="#fff"></TextView>
+    </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

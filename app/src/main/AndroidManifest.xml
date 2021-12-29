@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.elevenzon.sqlite"
+    package="com.nic.sqlite"
     android:installLocation="auto">
 
     <supports-screens
@@ -31,7 +31,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
         android:allowBackup="true"
@@ -44,21 +44,31 @@
         android:usesCleartextTraffic="true"
         android:windowSoftInputMode="stateHidden"
         tools:replace="android:appComponentFactory">
-        <activity android:name="com.elevenzon.com.nic.sqlite.Activity.HomePage"></activity>
-        <activity android:name="com.elevenzon.com.nic.sqlite.MainActivity" />
-        <activity android:name="com.elevenzon.com.nic.sqlite.Activity.LoginScreen">
+        <activity android:name=".Activity.BottomNavigationActivty" />
+        <activity android:name=".Activity.CameraActivity" />
+        <activity android:name=".Activity.PhonePeActivity" />
+        <activity android:name=".Activity.RazorPaymentActivity" />
+        <activity android:name=".Activity.MindReadingGame" />
+        <activity android:name=".WebViewSample" />
+        <activity android:name=".Activity.AddMatchDetails" />
+        <activity android:name=".Activity.CricketScoreBoard" />
+        <activity android:name=".Activity.HomePage" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Activity.LoginScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.elevenzon.com.nic.sqlite.Activity.ChessTimer" />
-        <activity android:name="com.elevenzon.com.nic.sqlite.Activity.AddlayoutInflater" />
-        <activity android:name="com.elevenzon.com.nic.sqlite.Activity.QRCodeReaderActivity" />
-        <activity android:name="com.elevenzon.com.nic.sqlite.Activity.RegistrationScreen" />
+        <activity android:name=".Activity.ChessTimer" />
+        <activity android:name=".Activity.AddlayoutInflater" />
+        <activity android:name=".Activity.QRCodeReaderActivity" />
+        <activity android:name=".Activity.RegistrationScreen" />
+        <activity android:name=".Activity.WebViewActivity" />
+        <activity android:name=".Activity.NewLogInActivity" />
 
-        <service android:name="com.elevenzon.com.nic.sqlite.Activity.GetLocationSimultanious" />
+        <service android:name=".Activity.GetLocationSimultanious" />
     </application>
 
 </manifest>

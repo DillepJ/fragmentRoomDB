@@ -3,11 +3,12 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.elevenzon.sqlite"
+        applicationId "com.nic.sqlite"
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -16,9 +17,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            def version = variant.versionName
+            def date = new Date()
+            def formattedDate = date.format('ddMMyy')
+            outputFileName = "JDK${variant.buildType.name}_v${version}_${formattedDate}.apk"
+        }
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dataBinding {
+        enabled = true
     }
 }
 repositories {
@@ -31,12 +43,15 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
+    implementation 'androidx.navigation:navigation-fragment:2.3.5'
+    implementation 'androidx.navigation:navigation-ui:2.3.5'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
-    implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'com.google.android.material:material:1.0.0'
+
 
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.google.android.material:material:1.2.1'
@@ -60,6 +75,22 @@ dependencies {
 
     //Card View
     implementation 'androidx.cardview:cardview:1.0.0'
+
+    ///RazorPay Payment GateWay
+    implementation 'com.razorpay:checkout:1.6.4'
+
+    ////Refresh Layout
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    //text Recognizor
+    implementation 'com.github.mahimrocky:TextRecognizer:1.0.0'
+
+    implementation 'com.google.android.gms:play-services-vision:17.0.2'
+
+    ///Camera
+    implementation 'com.mindorks:paracamera:0.2.2'
+
+    implementation 'com.etebarian:meow-bottom-navigation:1.3.1'
 
 
 }

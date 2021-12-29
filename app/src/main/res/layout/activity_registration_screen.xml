@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.RegistrationScreen">
+    tools:context="com.nic.sqlite.Activity.RegistrationScreen">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -56,13 +56,13 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp">
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:padding="10dp"
                     android:layout_width="90dp"
                     android:layout_height="90dp"
                     android:id="@+id/image_icon"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/camera_icon"></ImageView>
+                    android:src="@drawable/dslr_camera"></de.hdodenhof.circleimageview.CircleImageView>
 
                 <ImageView
                     android:visibility="gone"
