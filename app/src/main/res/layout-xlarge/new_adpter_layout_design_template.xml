@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/cornered_border_bg_strong">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_margin="2dp"
+            android:background="@drawable/bottom_left_curev_rect_bg_new">
+
+            <RelativeLayout
+                android:id="@+id/image_rl"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/cornered_border_bg_strong_circle">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/dslr_camera"></ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_rl"
+                android:layout_margin="5dp"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/tv_1"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:textColor="#00B8D4"
+                    android:layout_height="wrap_content"
+                    android:text="MOBILE DEVELOPMENT"
+                    android:padding="10dp"></TextView>
+
+
+                <TextView
+                    android:layout_below="@id/tv_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="Lorem ipsum dolor sit amet conse ctetur adipisicing elit. Qui quaerat fugit quas veniam perferendis repudiandae sequi, dolore quisquam illum"
+                    android:padding="10dp"></TextView>
+
+            </RelativeLayout>
+        </RelativeLayout>
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="-55dp"
+            android:layout_marginTop="-65dp"
+            android:src="@drawable/new_circle_bg_1"></ImageView>
+
+    </RelativeLayout>
+
+</RelativeLayout>
