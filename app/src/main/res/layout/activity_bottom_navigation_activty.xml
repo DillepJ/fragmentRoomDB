@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Activity.BottomNavigationActivty">
 
-    <LinearLayout
+    <!--<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
@@ -57,6 +57,83 @@
         app:mbn_selectedIconColor="#3c415e"
         app:mbn_shadowColor="#1f212121"
         android:layout_gravity="bottom"></meow.bottomnavigation.MeowBottomNavigation>
+-->
+    <com.gauravk.bubblenavigation.BubbleNavigationLinearView
+        android:id="@+id/bottom_navigation_view_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="8dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        >
 
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/l_item_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_active="true"
+            app:bt_colorActive="@color/home_active"
+            app:bt_colorInactive="@color/default_inactive"
+            app:bt_icon="@drawable/ic_home"
+            app:bt_shape="@drawable/transition_background_drawable_home"
+            app:bt_title="Home"
+            app:bt_padding="12dp"
+            app:bt_titlePadding="12dp" />
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/l_item_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_active="true"
+            app:bt_colorActive="@color/home_active"
+            app:bt_colorInactive="@color/default_inactive"
+            app:bt_icon="@drawable/ic_message"
+            app:bt_shape="@drawable/transition_background_drawable_home"
+            app:bt_title="Home"
+            app:bt_padding="5dp"
+            app:bt_titlePadding="5dp" />
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/l_item_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_active="true"
+            app:bt_colorActive="@color/home_active"
+            app:bt_colorInactive="@color/default_inactive"
+            app:bt_icon="@drawable/ic_notification"
+            app:bt_shape="@drawable/transition_background_drawable_home"
+            app:bt_title="Home"
+            app:bt_padding="5dp"
+            app:bt_titlePadding="5dp" />
+
+        <!--<com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/l_item_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_active="true"
+            app:bt_colorActive="@color/home_active"
+            app:bt_colorInactive="@color/default_inactive"
+            app:bt_icon="@drawable/settings_icon"
+            app:bt_shape="@drawable/transition_background_drawable_home"
+            app:bt_title="Home"
+            app:bt_padding="5dp"
+            app:bt_titlePadding="5dp" />
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/l_item_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_active="true"
+            app:bt_colorActive="@color/home_active"
+            app:bt_colorInactive="@color/default_inactive"
+            app:bt_icon="@drawable/ic_account"
+            app:bt_shape="@drawable/transition_background_drawable_home"
+            app:bt_title="Home"
+            app:bt_padding="5dp"
+            app:bt_titlePadding="5dp" />
+-->
+
+        <!-- Add more child items here - max upto 5 -->
+
+    </com.gauravk.bubblenavigation.BubbleNavigationLinearView>
 
 </FrameLayout>
