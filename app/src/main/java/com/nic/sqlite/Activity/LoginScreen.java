@@ -59,7 +59,7 @@ public class LoginScreen extends AppCompatActivity implements View.OnClickListen
      */
     private static final String[] REQUIRED_SDK_PERMISSIONS = new String[] {
             Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.CAMERA,Manifest.permission.READ_CONTACTS, Manifest.permission.READ_EXTERNAL_STORAGE
-    ,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.ACCESS_COARSE_LOCATION};
+    ,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.ACCESS_COARSE_LOCATION,Manifest.permission.CALL_PHONE};
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -232,7 +232,7 @@ public class LoginScreen extends AppCompatActivity implements View.OnClickListen
     public void gotoChessTimerAndRegisterScreen(String type){
         Intent intent=null;
         if(type.equals("Login")){
-            intent=new Intent(LoginScreen.this, BottomNavigationActivty.class);
+            intent=new Intent(LoginScreen.this, HomePage.class);
         }
         else if(type.equals("SignUp")){
             intent=new Intent(LoginScreen.this, RegistrationScreen.class);

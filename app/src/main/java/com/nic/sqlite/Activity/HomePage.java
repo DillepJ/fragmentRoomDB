@@ -1,17 +1,22 @@
 package com.nic.sqlite.Activity;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.nic.sqlite.ImageZoom.ImageMatrixTouchHandler;
 import com.nic.sqlite.NoteModel;
 import com.nic.sqlite.R;
 import com.nic.sqlite.SqliteHelepr;
@@ -67,6 +72,13 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
             profile_image.setImageBitmap(getImage(user_profile));
         }
         user_name.setText(prefManager.getUserName());
+
+        profile_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ExpandedImage(profile_image.getDrawable());
+            }
+        });
     }
     public boolean getUserDetails(){
         userList=new ArrayList<>();
@@ -77,6 +89,40 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
         }
         else {
             return false;
+        }
+    }
+
+    private void ExpandedImage(Drawable profile) {
+        try {
+            //We need to get the instance of the LayoutInflater, use the context of this activity
+            LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            //Inflate the view from a predefined XML layout
+            View ImagePopupLayout = inflater.inflate(R.layout.image_custom_layout, null);
+
+            ImageView zoomImage = (ImageView) ImagePopupLayout.findViewById(R.id.imgZoomProfileImage);
+            zoomImage.setImageDrawable(profile);
+
+            ImageMatrixTouchHandler imageMatrixTouchHandler = new ImageMatrixTouchHandler(this);
+            zoomImage.setOnTouchListener(imageMatrixTouchHandler);
+//            AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(mContext, R.style.MyDialogTheme);
+            AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+            dialogBuilder.setView(ImagePopupLayout);
+
+            final AlertDialog alert = dialogBuilder.create();
+            alert.getWindow().getAttributes().windowAnimations = R.style.dialog_animation_zoomInOut;
+            alert.show();
+            alert.getWindow().setBackgroundDrawableResource(R.color.full_transparent);
+            alert.setCanceledOnTouchOutside(true);
+
+            zoomImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    alert.dismiss();
+                }
+            });
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -126,7 +172,7 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
             intent=new Intent(HomePage.this, MindReadingGame.class);
         }
         else if(type.equals("phone_pe_rl")){
-            intent=new Intent(HomePage.this, PhonePeActivity.class);
+            intent=new Intent(HomePage.this, ContactList.class);
         }
         startActivity(intent);
         //finish();

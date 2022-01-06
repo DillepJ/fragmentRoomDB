@@ -96,5 +96,4 @@ dependencies {
     implementation 'com.gauravk.bubblenavigation:bubblenavigation:1.0.7'
 
 
-
 }

@@ -13,7 +13,7 @@
         android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:src="@drawable/tamilnadu_logo" />
+        android:src="@drawable/app_logo" />
 
     <RelativeLayout
         android:layout_centerInParent="true"

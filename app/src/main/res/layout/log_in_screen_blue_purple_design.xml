@@ -72,6 +72,7 @@
                 android:gravity="center"
                 android:id="@+id/user_name"
                 android:textColorHint="@color/white"
+                android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/user_image_icon"
@@ -103,6 +104,7 @@
                 android:hint="Password"
                 android:gravity="center"
                 android:id="@+id/password"
+                android:singleLine="true"
                 android:textColorHint="@color/white"
                 android:layout_toRightOf="@id/user_password_icon"
                 android:layout_centerVertical="true"
@@ -148,7 +150,6 @@
                 android:textColor="@color/white"
                 android:text="SignIn"
                 android:id="@+id/sign_btn"
-                android:onClick="gotoWebView"
                 android:background="@drawable/sign_in_button_bg_new"
                 android:textAllCaps="false"></Button>
 

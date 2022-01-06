@@ -19,6 +19,7 @@ public class SqliteHelepr extends SQLiteOpenHelper {
     public static final String TABLE_NAME2 = "sample11";
    // public  static final String Image_Table="image_table";
     public  static final String user_details_table="image_table";
+    public  static final String user_contacts_table="user_contacts_table";
 
     public SqliteHelepr(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -43,6 +44,13 @@ public class SqliteHelepr extends SQLiteOpenHelper {
                 "password TEXT," +
                 "pvname TEXT)");
 
+        db.execSQL("CREATE TABLE " + user_contacts_table + " ("
+                +"user_id integer primary key ,"+
+                "user_name TEXT," +
+                "dob TEXT," +
+                "mobile_number TEXT," +
+                "profile_img BLOB)");
+
 
         db.execSQL(query1);
         //db.execSQL(images);
@@ -56,6 +64,7 @@ public class SqliteHelepr extends SQLiteOpenHelper {
             db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME1);
             //db.execSQL("DROP TABLE IF EXISTS " + Image_Table);
             db.execSQL("DROP TABLE IF EXISTS " + user_details_table);
+            db.execSQL("DROP TABLE IF EXISTS " + user_contacts_table);
             onCreate(db);
         }
     }
@@ -97,6 +106,44 @@ public class SqliteHelepr extends SQLiteOpenHelper {
         return id;
 
     }
+    public long insertContactDetails(String user_name,String mobile_no,String dob, byte[] profile) {
+        long id=0;
+        SQLiteDatabase sqLiteDatabase = this .getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("user_name", user_name);
+        values.put("dob",dob);
+        values.put("mobile_number",mobile_no);
+        values.put("profile_img",profile);
+
+
+        //inserting new row
+        id = sqLiteDatabase.insert(user_contacts_table, null , values);
+        //close database connection
+        sqLiteDatabase.close();
+
+        return id;
+
+    }
+    public long updateContactDetails(int ID,String user_name,String mobile_no,String dob,byte[] profile) {
+        long id=0;
+        SQLiteDatabase sqLiteDatabase = this .getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("user_name", user_name);
+        values.put("dob",dob);
+        values.put("mobile_number",mobile_no);
+        values.put("profile_img",profile);
+
+        //inserting new row
+        //id = sqLiteDatabase.insert(user_details_table, null , values);
+        id = sqLiteDatabase.update(user_contacts_table, values, "user_id = " + ID, null);
+        //close database connection
+        sqLiteDatabase.close();
+
+        return id;
+
+    }
+
+
     public long updateUserDetails(String user_name,String dob,String password, byte[] profile,String mobile_no,int ID) {
         long id=0;
         SQLiteDatabase sqLiteDatabase = this .getWritableDatabase();
@@ -144,6 +191,31 @@ public class SqliteHelepr extends SQLiteOpenHelper {
         return arrayList;
     }
 
+    //get User Details
+    public ArrayList<NoteModel> getContactDetails() {
+        ArrayList<NoteModel> arrayList = new ArrayList<>();
+
+        // select all query
+        String select_query= "SELECT *FROM " + user_contacts_table;
+
+        SQLiteDatabase db = this .getWritableDatabase();
+        Cursor cursor = db.rawQuery(select_query, null);
+
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                NoteModel noteModel = new NoteModel();
+                noteModel.setUser_id(cursor.getInt(cursor.getColumnIndexOrThrow("user_id")));
+                noteModel.setUser_profile(cursor.getBlob(cursor.getColumnIndexOrThrow("profile_img")));
+                noteModel.setUser_name(cursor.getString(cursor.getColumnIndexOrThrow("user_name")));
+                noteModel.setUser_dob(cursor.getString(cursor.getColumnIndexOrThrow("dob")));
+                noteModel.setUser_mobile_no(cursor.getString(cursor.getColumnIndexOrThrow("mobile_number")));
+
+                arrayList.add(noteModel);
+            }while (cursor.moveToNext());
+        }
+        return arrayList;
+    }
 
     //get the all notes
     public ArrayList<NoteModel> getNotes() {

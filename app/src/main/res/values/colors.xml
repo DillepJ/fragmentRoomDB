@@ -1,7 +1,7 @@
 <resources>
-    <color name="colorPrimary">#0FDAC0</color>
-    <color name="colorPrimaryDark">#00BFA5</color>
-    <color name="colorAccent">#00B8D4</color>
+    <color name="colorPrimary">#5D73F6</color>
+    <color name="colorPrimaryDark">#5D73F6</color>
+    <color name="colorAccent">#5D73F6</color>
     <color name="white">#ffffff</color>
     <color name="background">#ececec</color>
     <color name="black">#000000</color>
@@ -48,5 +48,6 @@
 
     <color name="default_inactive">#78909c</color>
     <color name="home_active">#F88A8A</color>
+    <color name="full_transparent">#00FF0000</color>
 
 </resources>
