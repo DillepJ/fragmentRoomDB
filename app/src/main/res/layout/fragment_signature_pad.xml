@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.SignaturePadFrag">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_margin="10dp"
+            android:layout_above="@+id/signaturesave_clear_rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:visibility="gone"
+                android:layout_width="350dp"
+                android:layout_height="250dp"
+                android:scaleType="fitCenter"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/signature_img"></ImageView>
+
+            <com.williamww.silkysignature.views.SignaturePad
+                android:id="@+id/signature_pad"
+                android:layout_margin="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:penColor="@android:color/black"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_margin="5dp"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/signaturesave_clear_rl"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_alignParentRight="true"
+                android:text="View Image"
+                android:id="@+id/save_btn"></Button>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_alignParentLeft="true"
+                android:text="Clear"
+                android:id="@+id/clear_btn"></Button>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

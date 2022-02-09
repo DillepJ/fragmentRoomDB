@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:id="@+id/app_bar"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+            <!-- app:layout_scrollFlags="scroll|enterAlways|snap"
+             app:popupTheme="@style/ThemeOverlay.AppCompat.Light">-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:id="@+id/header_layout">
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="@dimen/margin"
+                    android:layout_marginLeft="10dp"
+                    android:text="Contacts"
+                    android:textColor="@android:color/white"
+                    android:textSize="14dp" />
+
+                <ImageView
+                    android:id="@+id/back_img"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:onClick="onBackPress"
+                    android:src="@drawable/back" />
+
+                <ImageView
+                    android:id="@+id/home_img"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="14dp"
+                    app:srcCompat="@drawable/ic_home"
+                    android:visibility="gone"/>
+
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!--Recycler view for displaying list of contacts-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/app_bar"
+        android:id="@+id/idRVContacts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!--progress bar for displaying loading-->
+    <ProgressBar
+        android:id="@+id/idPBLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <!--fab for adding a new contact-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/idFABadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        app:srcCompat="@drawable/ic_add_black_24dp"
+        app:fabCustomSize="40dp"
+        app:tint="@color/white" />
+
+</RelativeLayout>

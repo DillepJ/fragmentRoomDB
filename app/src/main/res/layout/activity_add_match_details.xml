@@ -18,7 +18,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="ContentDescription" />
 
     <WebView
         android:layout_below="@+id/rl1"
@@ -26,7 +27,8 @@
         android:layout_height="match_parent"
         android:id="@+id/web_view"
         android:visibility="gone"
-        android:scaleType="fitCenter"></WebView>
+        android:scaleType="fitCenter"
+        tools:ignore="UnknownIdInLayout" />
 
 
     <TextView

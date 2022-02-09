@@ -1,11 +1,21 @@
 <resources>
-    <color name="colorPrimary">#5D73F6</color>
-    <color name="colorPrimaryDark">#5D73F6</color>
+    <color name="colorPrimary">#6200EA</color>
+    <color name="colorPrimaryDark">#2962FF</color>
     <color name="colorAccent">#5D73F6</color>
     <color name="white">#ffffff</color>
     <color name="background">#ececec</color>
     <color name="black">#000000</color>
     <color name="gray">#808080</color>
+
+    <!-- Teal Theme Colors -->
+    <color name="colorPrimaryTeal">#008577</color>
+    <color name="colorPrimaryDarkTeal">#00574B</color>
+    <color name="colorAccentTeal">#D81B60</color>
+
+    <!-- Cyan Theme Colors -->
+    <color name="colorPrimaryCyan">#26c6da</color>
+    <color name="colorPrimaryDarkCyan">#0095a8</color>
+    <color name="colorAccentCyan">#ffca28</color>
 
     <color name="colorDanger">#dc3545</color>
     <color name="colorWarning">#ffc107</color>
@@ -49,5 +59,33 @@
     <color name="default_inactive">#78909c</color>
     <color name="home_active">#F88A8A</color>
     <color name="full_transparent">#00FF0000</color>
+
+    <color name="lite_purple">#B481FC</color>
+    <color name="light_color">#fff1e1</color>
+    <item name="darkblue" type="color">#A90099CC</item>
+    <item name="darkpurple" type="color">#A99933CC</item>
+    <item name="darkgreen" type="color">#DA4CAF50</item>
+    <color name="background_light_gray">#f1f1f1</color>
+    <color name="purple_1">#FFAA66CC</color>
+
+    <color name="start">#0189ff</color>
+    <color name="end">#01f1fa</color>
+    <color name="address">#2F7092</color>
+    <color name="followers">#0D5D98</color>
+    <color name="headings">#3797CF</color>
+    <color name="solidCircle">#AAFFFFFF</color>
+    <color name="circleBorder">#50FFFFFF</color>
+    <color name="gradEnd">#67EFC8</color>
+    <color name="gradStart">#63C9FF</color>
+    <color name="followersBg">#65DCE5</color>
+    <color name="followingBg">#49BEFF</color>
+    <color name="grey">#666666</color>
+    <color name="greylight2">#f3f3f3</color>
+    <color name="greylight">#f1f1f1</color>
+
+
+
+
+
 
 </resources>

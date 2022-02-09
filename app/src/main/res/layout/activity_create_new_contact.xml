@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.CreateNewContactActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:visibility="visible"
+        android:background="@color/colorPrimaryDark"
+        android:id="@+id/header_layout">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/margin"
+            android:layout_marginLeft="10dp"
+            android:text="Contacts"
+            android:textColor="@android:color/white"
+            android:textSize="14dp" />
+
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:id="@+id/back_img"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:onClick="onBackPress"
+            android:src="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/home_img"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="14dp"
+            app:srcCompat="@drawable/ic_home"
+            android:visibility="gone"/>
+
+
+    </RelativeLayout>
+
+    <!--edit text for user name-->
+    <RelativeLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/user_info_rect">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/user_name_img"
+            android:src="@drawable/user_img"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"></ImageView>
+
+        <EditText
+            android:hint="User Name"
+            android:layout_marginLeft="10dp"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/idEdtName"
+            android:layout_toRightOf="@+id/user_name_img"
+            android:background="@null"></EditText>
+    </RelativeLayout>
+
+    <!--edit text for user phone number-->
+    <RelativeLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/user_info_rect">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/number_name_img"
+            app:srcCompat="@drawable/ic_phone_black_24dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"></ImageView>
+
+        <EditText
+            android:hint="Enter Number"
+            android:layout_marginLeft="10dp"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/idEdtPhoneNumber"
+            android:layout_toRightOf="@+id/number_name_img"
+            android:background="@null"></EditText>
+    </RelativeLayout>
+
+    <!--edit text for user email-->
+    <RelativeLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/user_info_rect">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/mail_name_img"
+            app:srcCompat="@drawable/ic_email_black_24dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"></ImageView>
+
+        <EditText
+            android:hint="Enter Mail Id"
+            android:layout_marginLeft="10dp"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/idEdtEmail"
+            android:layout_toRightOf="@+id/mail_name_img"
+            android:background="@null"></EditText>
+    </RelativeLayout>
+
+    <!--button for saving a new contact-->
+    <Button
+        android:id="@+id/idBtnAddContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Save Contact"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:background="@drawable/sign_in_btn"/>
+
+</LinearLayout>

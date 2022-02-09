@@ -10,13 +10,13 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimaryDark">
+        android:background="@drawable/new_drawable_sign_bg">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/toolbar"
-            android:background="@color/colorPrimary">
+            android:background="@color/followers">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -342,7 +342,7 @@
 
                 <Button
                     android:id="@+id/sign_up_btn"
-                    android:background="@drawable/sign_in_btn"
+                    android:background="@drawable/new_bg_log_in_btn"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textColor="#fff"

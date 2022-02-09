@@ -36,7 +36,7 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
     CircleImageView profile_image;
     GifImageView gifImageView;
     TextView user_name;
-    RelativeLayout game_assistance_rl,qr_reader_rl,cricket_score_rl,mind_game_rl,phone_pe_rl;
+    RelativeLayout game_assistance_rl,qr_reader_rl,cricket_score_rl,mind_game_rl,phone_pe_rl,my_contact_rl;
     public  static SqliteHelepr database_helper;
     PrefManager prefManager;
 
@@ -60,12 +60,14 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
         cricket_score_rl=findViewById(R.id.cricket_score_rl);
         phone_pe_rl=findViewById(R.id.phone_pe_rl);
         mind_game_rl=findViewById(R.id.mind_game_rl);
+        my_contact_rl=findViewById(R.id.my_contact_rl);
         getUserDetails();
         game_assistance_rl.setOnClickListener(this::onClick);
         qr_reader_rl.setOnClickListener(this::onClick);
         cricket_score_rl.setOnClickListener(this::onClick);
         mind_game_rl.setOnClickListener(this::onClick);
         phone_pe_rl.setOnClickListener(this::onClick);
+        my_contact_rl.setOnClickListener(this::onClick);
         back.setOnClickListener(this::onClick);
         getTimeMange();
         if(getUserDetails()) {
@@ -153,6 +155,10 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
             case R.id.phone_pe_rl:
                 gotoChessTimerAndRegisterScreen("phone_pe_rl");
                 break;
+
+            case R.id.my_contact_rl:
+                gotoChessTimerAndRegisterScreen("my_contact_rl");
+                break;
         }
 
     }
@@ -166,13 +172,16 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
             intent=new Intent(HomePage.this, QRCodeReaderActivity.class);
         }
         else if(type.equals("CRICKET")){
-            intent=new Intent(HomePage.this, NewLogInActivity.class);
+            intent=new Intent(HomePage.this, TabLayoutActivity.class);
         }
         else if(type.equals("MIND_GAME")){
             intent=new Intent(HomePage.this, MindReadingGame.class);
         }
         else if(type.equals("phone_pe_rl")){
             intent=new Intent(HomePage.this, ContactList.class);
+        }
+        else if(type.equals("my_contact_rl")){
+            intent=new Intent(HomePage.this, MyContacts.class);
         }
         startActivity(intent);
         //finish();

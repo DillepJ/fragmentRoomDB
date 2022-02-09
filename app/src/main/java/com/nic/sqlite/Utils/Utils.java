@@ -132,12 +132,19 @@ public class Utils {
             dialog.setContentView(R.layout.alert_dialog);
 
             TextView text = (TextView) dialog.findViewById(R.id.tv_message);
+            ImageView close_icon = (ImageView) dialog.findViewById(R.id.close);
             text.setText(msg);
 
             Button dialogButton = (Button) dialog.findViewById(R.id.btn_ok);
             Button dialogButton1 = (Button) dialog.findViewById(R.id.btn_cancel);
             dialogButton1.setVisibility(View.GONE);
             dialogButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog.dismiss();
+                }
+            });
+            close_icon.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     dialog.dismiss();

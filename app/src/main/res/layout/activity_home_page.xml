@@ -164,7 +164,7 @@
                     android:layout_centerVertical="true"
                     android:id="@+id/cricket_icon"
                     android:tint="@color/colorPrimary"
-                    android:src="@drawable/qr_icon">
+                    app:srcCompat="@drawable/ic_screenshot_">
                 </ImageView>
 
                 <TextView
@@ -175,7 +175,7 @@
                     android:layout_marginLeft="10dp"
                     android:textSize="15dp"
                     android:textColor="@color/black"
-                    android:text="Login Page"
+                    android:text="My Screens"
                     android:layout_centerVertical="true"></TextView>
             </RelativeLayout>
             <RelativeLayout
@@ -236,6 +236,36 @@
                     android:textSize="15dp"
                     android:textColor="@color/black"
                     android:text="Phone Contact"
+                    android:layout_centerVertical="true"></TextView>
+            </RelativeLayout>
+            <RelativeLayout
+                android:padding="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/my_contact_rl"
+                android:background="@drawable/log_in_bg">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/my_contact_icon"
+                    android:tint="@color/colorPrimary"
+                    app:srcCompat="@drawable/ic_phone_black_24dp">
+                </ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/my_contact_tv_5"
+                    android:layout_toRightOf="@+id/my_contact_icon"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
+                    android:text="My Phone Contact"
                     android:layout_centerVertical="true"></TextView>
             </RelativeLayout>
 

@@ -29,10 +29,12 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- permissions to read contacts -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" /> <!-- permissions to write contacts -->
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" /> <!-- permissions to make a call -->
+    <uses-permission android:name="android.permission.CALL_PHONE" /> <!-- permissions to send sms -->
+    <uses-permission android:name="android.permission.SEND_SMS" /> <!-- permissions to write sms -->
+    <uses-permission android:name="android.permission.WRITE_SMS" />
 
     <application
         android:allowBackup="true"
@@ -45,7 +47,12 @@
         android:usesCleartextTraffic="true"
         android:windowSoftInputMode="stateHidden"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".Activity.ContactList"></activity>
+        <activity android:name=".Activity.TabLayoutActivity" />
+        <activity android:name=".Activity.MyScreenSamples" />
+        <activity android:name=".Activity.CreateNewContactActivity" />
+        <activity android:name=".Activity.ContactDetailActivity" />
+        <activity android:name=".Activity.MyContacts" />
+        <activity android:name=".Activity.ContactList" />
         <activity android:name=".Activity.BottomNavigationActivty" />
         <activity android:name=".Activity.CameraActivity" />
         <activity android:name=".Activity.PhonePeActivity" />

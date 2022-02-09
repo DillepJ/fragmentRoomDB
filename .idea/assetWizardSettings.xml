@@ -23,7 +23,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/communication/ic_phone_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/communication/ic_email_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -33,9 +33,10 @@
                         </option>
                         <option name="values">
                           <map>
+                            <entry key="assetSourceType" value="FILE" />
                             <entry key="color" value="0b0b0b" />
-                            <entry key="outputName" value="ic_phone_black_24dp" />
-                            <entry key="sourceFile" value="G:\dileep_db\focus.svg" />
+                            <entry key="outputName" value="ic_icons_account_" />
+                            <entry key="sourceFile" value="C:\Users\NIC\Downloads\icons8-account-50.svg" />
                           </map>
                         </option>
                       </PersistentState>
